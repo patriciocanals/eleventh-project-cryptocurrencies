@@ -39,7 +39,6 @@ function selectCryptocurrencies(cryptos){
 
 function readValue(e){
     searchObj[e.target.name] = e.target.value;
-    console.log(searchObj);
 }
 
 function submitForm(e){
@@ -72,8 +71,6 @@ function showAlert(msg){
 function requestAPI(){
     const {currency,cryptocurrency} = searchObj;
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptocurrency}&tsyms=${currency}`;
-
-    showSpinner();
 
     fetch(url)
                 .then(response => response.json() )
@@ -119,21 +116,7 @@ function showQuote(quote) {
 
 function cleanHTML() {
     while(resultDiv.firstChild){
-        resultDiv.remove(resultDiv.firstChild);
+        resultDiv.removeChild(resultDiv.firstChild);
+        //resultDiv.remove(resultDiv.firstChild);
     }
-}
-
-function showSpinner() {
-    cleanHTML();
-
-    const spinner = document.createElement('div');
-    spinner.classList.add('spinner');
-    spinner.innerHTML = `
-    <div class="spinner">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
-  </div>
-    `;
-    resultDiv.appendChild(spinner);
 }
