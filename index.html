@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Trader</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="one-half column">
+                <img src="img/cryptocurrencies.png">
+            </div>
+            <div class="one-half column">
+                <form id="form">
+                    <div class="row">
+                        <label>Currency</label>
+                        <select class="u-full-width" id="currency" name="currency">
+                                <option value="" disabled selected>Choose your currency</option>
+                                <option value="ARS">Argentinian Peso</option>
+                                <option value="EUR">Euro</option>
+                                <option value="GBP">Pound Steerling</option>
+                                <option value="USD">US Dollar</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                    <div>
+                        <label>Cryptocurrency</label>
+                        <select class="u-full-width" id="cryptocurrencies" name="cryptocurrency">
+                            <option value="" disabled selected>Choose your Cryptocurrency</option>
+                        </select>
+                    </div>
+                    </div>
+                    <input class="button-primary u-full-width" type="submit" value="Quote" />
+
+                    <div id="result" class="result"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
